@@ -6,8 +6,12 @@ import H5AudioPlayer from 'react-h5-audio-player';
 
 const LocalLibrary = () => {
 	const [tracks, setTracks] = useState(trackData);
+	
+	const [currentTrack, setCurrentTrack] = useState(null);
 
 	const handlePlay = (id) => {
+		const selectedTrack = tracks.find(track => track.id === id);
+		setCurrentTrack(selectedTrack);
 		setTracks((prevTracks) =>
 			prevTracks.map((track) =>
 				track.id === id ? { ...track, listens: track.listens + 1 } : track
@@ -24,11 +28,11 @@ const LocalLibrary = () => {
 				<div className="row">
 					<div className="col">
 						{tracks.map((track) => (
-							<Track key={track.id} track={track} onPlay={handlePlay} />
+							<Track key={track.id} track={track} onPlay={() => handlePlay(track.id)} />
 						))}
 					</div>
 				</div>
-				<H5AudioPlayer />
+				{currentTrack && <H5AudioPlayer src={currentTrack.audioUrl} />}
 			</div>
 
 		</div>

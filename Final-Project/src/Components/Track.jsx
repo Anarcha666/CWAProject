@@ -46,6 +46,7 @@ const Track = ({ track, onPlay }) => {
           onPlay={(e) => console.log('onPlay')}
           onPause={(e) => console.log('onPause')}
           onEnded={(e) => modifyTrackListens()}
+          style={{ visibility: 'hidden', pointerEvents: 'none' }}
         // other props here
         />
       </div>
