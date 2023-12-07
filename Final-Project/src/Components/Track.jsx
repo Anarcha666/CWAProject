@@ -36,7 +36,7 @@ const Track = ({ track, onPlay }) => {
         onPlay(track.id);
         setCanPlay(!canPlay); // Toggle canPlay state
       }}>
-        {canPlay ? 'Pause' : 'Play'}
+         Play
       </button>}
         <div>Listens: {trackListensState}</div>
 

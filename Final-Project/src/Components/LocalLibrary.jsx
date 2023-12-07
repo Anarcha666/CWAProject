@@ -7,7 +7,7 @@ import H5AudioPlayer from 'react-h5-audio-player';
 const LocalLibrary = () => {
 	const [tracks, setTracks] = useState(trackData);
 	
-	const [currentTrack, setCurrentTrack] = useState(null);
+	const [currentTrack, setCurrentTrack] = useState(tracks[0]);
 
 	const handlePlay = (id) => {
 		const selectedTrack = tracks.find(track => track.id === id);
