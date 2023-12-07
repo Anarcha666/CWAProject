@@ -1,6 +1,7 @@
 import React from 'react';
+import SpotifyTrack from './SpotifyTrack';
 
-const SpotifySearch = ({ goBack }) => {
+const SpotifySearch  = ({ goBack }) => {
   return (
     <div className="container">
       <h2>Spotify Search</h2>
@@ -11,8 +12,12 @@ const SpotifySearch = ({ goBack }) => {
           </div>
         </div>
         <div className="col-4">
-          <button className="btn btn-primary" onClick={goBack}>Back to App</button>
+          <button className="btn btn-primary" >Search</button>
+        
         </div>
+      </div>
+      <div className="row">
+      <SpotifyTrack />
       </div>
     </div>
   );
