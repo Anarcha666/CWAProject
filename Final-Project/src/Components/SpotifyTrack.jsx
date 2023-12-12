@@ -8,14 +8,18 @@ function SpotifyTrack(track) {
 <div className="container" >
     <div className="row">
     <div className="col">Title: {track.track.name}</div>
-    <div className="col">Artist: {track.artists}</div>
-    <div className="col">{track.duration}</div>
+    <div className="col">Artist: {track.track.artists[0].name}</div>
+    <div className="col">{track.track.duration}</div>
 
    <div className="col">
+    <a href={track.track.preview_url}> 
     <button>Preview</button> 
+    </a>
     </div>
    <div className="col">
-    <button>Open in Spotify</button> 
+    <a href={track.track.external_urls.spotify}>
+    <button >Open in Spotify</button> 
+    </a>
     </div>
    </div>
 </div>
